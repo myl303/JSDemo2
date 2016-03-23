@@ -1,0 +1,33 @@
+<html>
+	<head></head>
+	<body>
+		<script type="text/javascript">
+		function dwn(s){
+			document.write(s+"<br/>");
+		};
+
+
+		function outerFun(){
+			var a = 0;
+			function innerFun(){
+				a++;
+				dwn(a);
+			};
+			return innerFun;
+		};
+
+		var obj = outerFun();
+		obj();
+		obj();
+		var obj2 = outerFun();
+		obj2();
+		obj2();
+
+
+		
+
+
+	
+		</script>
+	</body>
+</html>

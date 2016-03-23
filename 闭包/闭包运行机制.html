@@ -1,0 +1,26 @@
+<html>
+	<head></head>
+	<body>
+		<script type="text/javascript">
+		function dwn(s){
+			document.write(s+"<br/>");
+		};
+
+
+		var name = "the window";
+		var object = {
+			name:"my object",
+			getNameFunc:function(){
+				return function(){
+					return this.name;
+				};
+			}
+		};
+
+		dwn(object.getNameFunc());
+		dwn(object.getNameFunc()());
+
+	
+		</script>
+	</body>
+</html>
