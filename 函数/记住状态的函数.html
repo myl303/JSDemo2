@@ -1,0 +1,27 @@
+<html>
+	<head></head>
+	<body>
+		<script type="text/javascript">
+		function dwn(s){
+			document.write(s+"<br/>");
+		};
+
+
+		// 函数的返回值是一个函数；
+		function greetingMaker(greeting){
+			function addName(name){
+				return greeting+" "+name;
+			};
+			return addName;
+		};
+
+		var daytimeGreeting = greetingMaker("Good day to you");
+		var nighttimeGreeting = greetingMaker("Good night to you");
+
+		dwn(daytimeGreeting);
+		dwn(daytimeGreeting(name));
+
+	
+		</script>
+	</body>
+</html>

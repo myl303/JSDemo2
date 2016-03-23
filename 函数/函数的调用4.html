@@ -1,0 +1,29 @@
+<html>
+	<head></head>
+	<body>
+		<script type="text/javascript">
+		function dwn(s){
+			document.write(s+"<br/>");
+		};
+
+		function add(c,d){
+			// return this.a+this.b+c+d;
+			dwn(this.a+this.b+c+d);
+		};
+
+		var o = {
+			a:1,
+			b:2
+		};
+		add.call(o,3,4);
+		add.apply(o,[3,4]);
+
+		// call或者apply绑定的第一个参数仅为该函数的上下文，也是this。绑定谁，this就指向谁；
+
+
+		
+
+
+		</script>
+	</body>
+</html>

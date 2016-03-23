@@ -1,0 +1,32 @@
+<html>
+	<head></head>
+	<body>
+		<script type="text/javascript">
+		function dwn(s){
+			document.write(s+"<br/>");
+		};
+
+		window.onload=function(){
+			var items = new Array("apple","orange","cherry","lime");
+			var sep = "*";
+			concatenateString(items,sep);
+			dwn(items);
+			dwn(sep);
+
+
+		};
+
+		function concatenateString(strings,seprator){
+			var result = "";
+			for (var i = 0; i < strings.length; i++) {
+				result +=strings[i]+seprator;
+			};
+			seprator = result;
+			strings[strings.length] = result;
+		};
+
+
+
+		</script>
+	</body>
+</html>

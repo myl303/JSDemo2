@@ -1,0 +1,36 @@
+<html>
+	<head></head>
+	<body>
+		<script type="text/javascript">
+		function dwn(s){
+			document.write(s+"<br/>");
+		};
+
+		var Person = function(){
+			this.name = "Peter";
+			this.sayHello = function(){
+				dwn("Hello!");
+				dwn(this);
+			};
+
+		}
+
+		var p = new Person();
+		p.sayHello();
+		var p1 = new Person();
+		p1.sayHello();
+
+
+
+
+
+
+
+
+		
+
+
+	
+		</script>
+	</body>
+</html>

@@ -1,0 +1,32 @@
+<html>
+	<head></head>
+	<body>
+		<script type="text/javascript">
+		function dwn(s){
+			document.write(s+"<br/>");
+		};
+
+		window.onload=function(){
+
+			var items = new Array("apple","orange","cherry");
+			var sep = "*";
+
+			concateString(items,sep);
+			// 参数交由函数处理后，没有返回值，但是数组处理过后，发生了改变；
+			dwn(items);
+			dwn(sep);
+		};
+
+		function concateString(string,seprator){
+			var result = "";
+			for (var i = 0; i < string.length; i++) {
+				result += string[i]+seprator;
+			};
+			seprator = result;
+			string[string.length] = result;
+		};
+
+	
+		</script>
+	</body>
+</html>

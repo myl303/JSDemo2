@@ -1,0 +1,32 @@
+<html>
+	<head></head>
+	<body>
+		<script type="text/javascript">
+		function dwn(s){
+			document.write(s+"<br/>");
+		};
+
+		// 声明式函数；
+		function t1(){
+			dwn("t1");
+		}
+
+		t1();
+		//重新定义t1
+		// 优先被执行的就是两个t1；，然后再执行调用的方法；所以第一个t1在输出的时候已经发生了变化；
+		function t1(){
+			dwn("new t1");
+		}
+
+		t1();
+
+		t1 = function(){
+			dwn("new new t1");
+		};
+
+		t1();
+
+
+		</script>
+	</body>
+</html>

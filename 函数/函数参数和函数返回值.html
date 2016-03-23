@@ -1,0 +1,48 @@
+<html>
+	<head></head>
+	<body>
+		<script type="text/javascript">
+		function dwn(s){
+			document.write(s+"<br/>");
+		};
+
+
+		function trans(list,op){
+			for (var i = 0; i < list.length; i++) {
+				list[i] = op(list[i]);
+			};
+		};
+
+		var list = [1,2,3,4];
+		trans(list,function(x){return x+1});
+		dwn(list);
+		trans(list,function(x){return x*2});
+		dwn(list);
+
+
+		function add(a,b){
+			b = b || 0;
+			var s = a+b;
+
+			var ret = function(a){
+				return add(a,s);
+			};
+			ret.valueOf = ret.toString = function(){
+				return s;
+			};
+			return ret;
+
+		};
+
+		dwn(add(5));
+		dwn(add(5,10));
+		dwn(add(5)(10));
+		dwn(add(5));
+
+
+
+
+
+		</script>
+	</body>
+</html>
