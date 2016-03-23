@@ -1,0 +1,51 @@
+<html>
+	<head></head>
+	<body>
+		<script type="text/javascript">
+		function dwn(s){
+			document.write(s+"<br/>");
+		};
+
+		// 回文检测
+		// function isPalindrome(text){
+		// 	if (text.length<=1) {
+		// 		// dwn("yes");
+		// 		return true;
+		// 	};
+		// 	if (text.charAt(0)!=text.charAt(text.length-1)) {
+		// 		// dwn("no");
+		// 		return false;
+		// 	};
+		// 	return isPalindrome(text.substr(1,text.length-2));
+		// };
+
+		// // dwn(isPalindrome("a"));
+		// var bl = "abcdcda";
+
+		// dwn(bl.substr(1,bl.length-2));
+		// dwn(isPalindrome("abcdcda"));
+
+
+
+		function chirp(n){
+
+			if(n>1) {
+				return chirp(n-1)+"-chirp"; 
+			}else{
+				return "chirp";
+			};
+
+		};
+
+		dwn(chirp(3));
+
+
+		function chirp(n){
+			return n>1 ? chirp(n-1)+"-chirp" : "chirp";
+		}
+		
+		dwn(chirp(3));
+
+		</script>
+	</body>
+</html>
