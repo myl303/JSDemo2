@@ -1,0 +1,122 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title></title>
+	</head>
+	<body>
+		<table id="myTable"  width="100%" border="1px">
+			<thead>
+				<tr>
+					<td>编号</td>
+					<td>姓名</td>
+					<td>性别</td>
+					<td>操作</td>
+				</tr>
+			</thead>
+			<tbody>
+				
+			</tbody>
+		</table>
+	<script>
+		window.onload = function(){
+			var tableData = [
+			{id:1,username:"zhangsan",sex:"nan"},
+			{id:2,username:"zhangsan",sex:"nan"},
+			{id:3,username:"zhangsan",sex:"nan"},
+			{id:4,username:"zhangsan",sex:"nan"}
+			];
+			
+			var oTab = document.getElementById("myTable");
+			var oTbody = oTab.tBodies[0];
+			for(var i=0;i<tableData.length;i++){
+				
+				var oTr = document.createElement("tr");
+				oTbody.appendChild(oTr);
+				if(i%2==0){
+					oTr.style.background = "yellowgreen";
+				};
+				
+				
+				var oTd = document.createElement("td");
+				oTd.innerHTML = tableData[i].id;
+				oTr.appendChild(oTd);
+				
+				var oTd1 = document.createElement("td");
+				oTd1.innerHTML = tableData[i].username;
+				oTr.appendChild(oTd1);
+				
+				var oTd2 = document.createElement("td");
+				oTd2.innerHTML = tableData[i].sex;
+				oTr.appendChild(oTd2);
+				
+				var oTd3 = document.createElement("td");
+				oTr.appendChild(oTd3);
+				
+				
+				
+				var oA = document.createElement('a');
+				oA.innerHTML = '删除';
+				oA.href = 'javascript:;';
+				oA.onclick = function(){
+				  oTbody.removeChild(this.parentNode.parentNode);
+				  for(var i = 0;i<oTbody.rows.length;i++){
+				  	if(i%2==0){
+				  		oTbody.rows[i].style.background = "white";
+				  	}else{
+				  		oTbody.rows[i].style.background = "green";
+				  	};
+				  };
+				};
+				oTd3.appendChild(oA);
+				
+				
+				
+				
+				
+				
+			};
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		}
+		
+	</script>
+	
+	</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
