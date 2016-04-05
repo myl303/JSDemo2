@@ -1,0 +1,84 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title></title>
+		<style>
+			.class1{
+				color: red;
+			}
+			.class2{
+				color: blue;
+			}
+		</style>
+	</head>
+	<body>
+		<div id = "box"  class="class1">aaaaa</div>
+		<script>
+			window.onload = function(){
+				var obj = document.getElementById("box");
+				addClass(obj,"class2");
+				removeClass(obj,"class2");
+				function addClass(obj,className){
+					console.log(obj.className);
+					if(obj.className==" "){
+						obj.className = className;
+					}else{
+//						obj.className+=" "+className;
+//						分割样式名称
+						var arrClassName = obj.className.split(" ");
+//						检测需要添加的样式名称是否重叠；
+						_index = arrIndexOf(arrClassName,className);
+						console.log(_index);
+						if(_index==-1){
+//							只有在样式不重叠的时候才添加
+							obj.className += ' '+className;
+						}
+					}
+				};//end function---------------------
+				
+				
+				
+				function removeClass(obj,className){
+					if(obj.className==""){
+						return;
+					};
+					var arrClassName = obj.className.split(" ");
+					_index = arrIndexOf(arrClassName,className);
+					if(_index!=-1){
+						arrClassName.splice(_index,1);
+						obj.className = arrClassName.join(" ");
+					};
+				}//end function
+				
+				//检测一个对象是否含有某个class名称；
+				function arrIndexOf(arr,v){
+					for(var i=0;i<arr.length;i++){
+						if(arr[i]==v){
+							return i;
+						};
+						
+					};
+					return -1;
+				};
+				
+				
+				
+				
+				
+				
+				
+			}//end onload;
+			
+			
+			
+			
+			
+			
+			
+			
+		</script>
+	</body>
+</html>
